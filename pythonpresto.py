@@ -1,7 +1,7 @@
 import presto
 from presto import transaction
 with presto.dbapi.connect(
-    host='ampool1',
+    host='<AE master node ip>',
     port=9295,
     user='admin',
     catalog='ampool',

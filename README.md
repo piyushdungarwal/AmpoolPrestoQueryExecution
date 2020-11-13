@@ -14,7 +14,7 @@ Usage:
 Copy .py file to any machine from where you want to execute query.
 Before running the script, you have to update connection details in the script.
 
-'host': Ampool engine master hostname
+'host': Ampool engine master node ip
 'user': User name for Presto user. Default: 'admin'
 'catalog': Presto catalog within Ampool engine. Default: 'ampool'
 'schema': Presto schema within the catalog. Default: 'default'

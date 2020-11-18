@@ -1,0 +1,63 @@
+Parametric query execution on Ampool Presto
+===========================================
+
+Parametric queries can be created and executed using 'Prepare' and 'Execute' mechanism.
+
+1. Prepare statements:
+----------------------
+
+Syntax: PREPARE statement_name FROM statement;
+
+Examples:
+
+  a. PREPARE my_select1 FROM SELECT * FROM nation;
+  b. PREPARE my_select2 FROM SELECT name FROM nation WHERE regionkey = ? AND nationkey < ?;
+
+2. Execute prepared statements:
+-------------------------------
+
+Syntax: EXECUTE statement_name [ USING parameter1 [ , parameter2, ... ] ]
+
+Examples:
+
+Following examples refer to corresponding PREPARE statement in above section.
+
+  a. EXECUTE my_select1;
+
+     This is equivalent to: SELECT * FROM nation;
+
+  b. EXECUTE my_select2 USING 1, 3;
+
+     This is equivalent to: SELECT name FROM nation WHERE regionkey = 1 AND nationkey < 3;
+
+3. Deallocate prepared statements:
+----------------------------------
+
+Syntax: DEALLOCATE PREPARE statement_name
+
+Examples:
+
+  a. DEALLOCATE PREPARE my_select1;
+  b. DEALLOCATE PREPARE my_select2;
+
+4. Describe prepared statement inputs:
+--------------------------------------
+
+Syntax: DESCRIBE INPUT statement_name
+
+Examples:
+
+  a. DESCRIBE INPUT my_select1;
+  b. DESCRIBE INPUT my_select2;
+
+5. Describe prepared statement outputs:
+---------------------------------------
+
+Syntax: DESCRIBE OUTPUT statement_name
+
+Examples:
+
+  a. DESCRIBE OUTPUT my_select1;
+  b. DESCRIBE OUTPUT my_select2;
+
+

@@ -60,7 +60,7 @@ Query string "sql": "show catalogs"
 
 After above updates, Java program can be executed as follows:
 
-javac JDBCPresto.py
+javac JDBCPresto.java
 java -cp $CLASSPATH:<Path to downloaded Presto JDBC jar>/presto-jdbc-330.jar JDBCPresto
 
 ======================================================================================================================================
